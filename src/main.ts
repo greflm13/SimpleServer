@@ -60,8 +60,8 @@ appredirect.get('*', function(req, res) {
   res.redirect('https://' + req.headers.host + ':' + httpsport + '/' + req.url);
 });
 
-const privKey = fs.readFileSync(path.join(__dirname, '../privkey.pem'), 'utf8');
-const cert = fs.readFileSync(path.join(__dirname, '../fullchain.pem'), 'utf8');
+const privKey = fs.readFileSync('/home/pi/privkey.pem', 'utf8');
+const cert = fs.readFileSync('/home/pi/fullchain.pem', 'utf8');
 const credentials = { key: privKey, cert: cert };
 const server = http.createServer(appredirect).listen(httpport, () => {
   debug.info('HTTP Server running on port ' + httpport);

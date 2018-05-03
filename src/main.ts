@@ -48,7 +48,7 @@ pugEngine.locals.pretty = true;
 app.use(logger);
 app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, './public/favicon.ico')));
 app.use(express.static(path.join(__dirname, './public')));
-app.use(express.static(path.join(__dirname, '../../www')));
+app.use(express.static(path.join(__dirname, '../www')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 app.use(error404Handler);
 app.use(errorHandler);

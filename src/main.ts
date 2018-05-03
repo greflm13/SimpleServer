@@ -53,13 +53,13 @@ app.use('/node_modules', express.static(path.join(__dirname, '../node_modules'))
 app.use(error404Handler);
 app.use(errorHandler);
 
-const appredirect = express();
-appredirect.get('*', function(req, res) {
-  res.redirect('https://' + req.headers.host + req.url);
-});
-
 const httpport: number = parseInt(fs.readFileSync(path.join(__dirname, '../http')).toString());
 const httpsport: number = parseInt(fs.readFileSync(path.join(__dirname, '../https')).toString());
+const appredirect = express();
+appredirect.get('*', function(req, res) {
+  res.redirect('https://' + req.headers.host + ':' + httpsport + '/' + req.url);
+});
+
 const privKey = fs.readFileSync(path.join(__dirname, '../privkey.pem'), 'utf8');
 const cert = fs.readFileSync(path.join(__dirname, '../fullchain.pem'), 'utf8');
 const credentials = { key: privKey, cert: cert };

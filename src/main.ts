@@ -57,7 +57,7 @@ const httpport: number = parseInt(fs.readFileSync(path.join(__dirname, '../http'
 const httpsport: number = parseInt(fs.readFileSync(path.join(__dirname, '../https')).toString());
 const appredirect = express();
 appredirect.get('*', function(req, res) {
-  res.redirect('https://' + req.headers.host + ':' + httpsport + '/' + req.url);
+  res.redirect('https://' + req.headers.host + req.url);
 });
 
 const privKey = fs.readFileSync('/home/pi/privkey.pem', 'utf8');

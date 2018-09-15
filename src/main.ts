@@ -99,7 +99,7 @@ function errorHandler(err: express.Errback, req: express.Request, res: express.R
     res.status(500).render('error500.pug', {
       time: ts,
       err: err,
-      href: 'mailto:greflm13@htl-kaindorf.ac.at?subject=Füttr server failed ' + ts + ' with Error: ' + err,
+      href: 'mailto:greflm13@htl-kaindorf.ac.at?subject=www.sorogon.eu failed ' + ts + ' with Error: ' + err,
       serveradmin: 'Florian Greistorfer'
     });
   }

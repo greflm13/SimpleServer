@@ -15,7 +15,7 @@
     "bootstrap": "^4.0.0",
     "debug": "^3.1.0",
     "debug-sx": "^0.1.7",
-    "express": "^4.16.2"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@types/debug": "0.0.30",
